@@ -1,0 +1,23 @@
+﻿@Model Test.Task.ViewModels.ProductViewModel
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Quantiy</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+            <td>@item.Quantiy</td>
+            <td>@item.Price</td>
+        </tr>
+    }
+    </tbody>
+</table>

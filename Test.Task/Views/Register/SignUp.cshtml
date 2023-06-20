@@ -1,0 +1,43 @@
+﻿@model Test.Task.ViewModels.SignUpUserViewModel
+@{
+    ViewData["Title"] = "SignUp";
+}
+<h1 class="text-center">Ro'yxatdan o'tish</h1>
+
+<div class="d-flex justify-content-center">
+    <form asp-action="SignUp" class="mb-3 w-25" method="post">
+        <div class="form-group">
+            <label for="UserName" class="form-label">UserName</label>
+            <input class="form-control" type="text" id="UserName" name="UserName" placeholder="UserName" />
+        </div>
+        <div class="form-group">
+            <label for="Name" class="form-label">LastName</label>
+            <input class="form-control" type="text" id="LastName" name="LastName" placeholder="LastName" />
+        </div>
+        <div class="form-group">
+            <label for="Email" class="form-label">Email</label>
+            <input class="form-control" type="text" id="Email" name="Email" placeholder="Email" />
+        </div>
+        <div class="form-group">
+            <label for="Password" class="form-label">Password</label>
+            <input class="form-control" type="password" id="Password" name="Password" placeholder="Password" />
+        </div>
+        <div class="form-group">
+            <label for="PhoneNumber" class="form-label">Phone number</label>
+            <input class="form-control" type="text" id="PhoneNumber" name="PhoneNumber" placeholder="PhoneNumber" />
+        </div>
+        <div class="form-group">
+            <label for="UserRole" class="form-label">UserRole</label>
+        </div>
+        <div method="post" action="...">
+            <label for="userRole">Rolni tanlang:</label>
+            <select id="userRole" name="SelectedRole">
+                <option value="User">User</option>
+                <option value="Admin">Admin</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control btn-primary" type="submit" value="Sign up"/>
+        </div>
+    </form>
+</div>
