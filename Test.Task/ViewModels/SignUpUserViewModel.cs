@@ -23,5 +23,5 @@ public class SignUpUserViewModel
     public string PhoneNumber { get; set; }
 
     [Required]
-    public ERole Role { get; set; } = ERole.User;
+    public ERole Role { get; set; }
 }

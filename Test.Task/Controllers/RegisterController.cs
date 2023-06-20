@@ -35,7 +35,7 @@ namespace Test.Task.Controllers
             _context.User.Add(model);
             _context.SaveChanges();
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Product", "Register");
         }
         public ActionResult SignIn()
         {
@@ -53,14 +53,35 @@ namespace Test.Task.Controllers
             {
                 return RedirectToAction("SignUp", "Register");
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Product", "Register");
         }
-
-
         public IActionResult Product()
         {
             var modelList = _context.Products.ToList();
             return View(modelList);
+        }
+        public ActionResult CreateProduct()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateProduct(ProductViewModel productViewModel)
+        {
+            if (!ModelState.IsValid)
+                return View(productViewModel);
+
+            var product = new Entities.Product()
+            {
+                Title = productViewModel.Title,
+                Quantiy = productViewModel.Quantiy,
+                Price = productViewModel.Price
+            };
+
+            _context.Products.Add(product);
+            _context.SaveChanges();
+
+            return RedirectToAction("Product", "Register");
         }
     }
 }
